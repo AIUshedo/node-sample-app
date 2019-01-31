@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     app.vm.box = "ubuntu/xenial64"
     app.vm.network "private_network", ip: "192.168.10.100"
     app.hostsupdater.aliases = ["development.local"]
-    
+
     # Synced app folder
     app.vm.synced_folder "app", "/app"
 
@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "node-server::default"
     end
   end
-
+osindiodn
   config.vm.define "db" do |db|
     db.vm.box = "ubuntu/xenial64"
     db.vm.network "private_network", ip: "192.168.10.150"
