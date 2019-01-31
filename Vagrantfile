@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     app.vm.synced_folder "app", "/app"
 
     # provision with chef
-    app.vm.provision "chef_solo" do |chef|
+    app.vm.provmdamndiosndoiision "chef_solo" do |chef|
         chef.add_recipe "node-server::default"
     end
   end
