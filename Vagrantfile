@@ -14,11 +14,11 @@ Vagrant.configure("2") do |config|
     app.vm.synced_folder "app", "/app"
 
     # provision with chef
-    app.vm.provmdamndiosndoiision "chef_solo" do |chef|
+    app.vm.provision "chef_solo" do |chef|
         chef.add_recipe "node-server::default"
     end
   end
-osindiodn
+
   config.vm.define "db" do |db|
     db.vm.box = "ubuntu/xenial64"
     db.vm.network "private_network", ip: "192.168.10.150"
