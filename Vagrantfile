@@ -1,4 +1,4 @@
-required_plugins = %w( vagrant-hostsupdater )
+required_plugins = %w( vagrant-hostsupdater vagrant-berkshelf )
 required_plugins.each do |plugin|
     exec "vagrant plugin install #{plugin};vagrant #{ARGV.join(" ")}" unless Vagrant.has_plugin? plugin || ARGV[0] == 'plugin'
 end
@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
     # provision with chef
     app.vm.provmdamndiosndoiision "chef_solo" do |chef|
-        chef.add_recipe "node-server::default"
+        chef.add_recipe "node::default"
     end
   end
 osindiodn
@@ -26,7 +26,7 @@ osindiodn
 
     # provision with chef
     db.vm.provision "chef_solo" do |chef|
-        chef.add_recipe "mongo-server::default"
+        chef.add_recipe "mongo::default"
     end
   end
 end
